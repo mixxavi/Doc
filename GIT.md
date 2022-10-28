@@ -334,7 +334,8 @@ Para cambiar de la rama de trabajo a otra sin guardar las modificaciones no conf
 
 Para guardar stash con un nombre.  
 
-	git stash save "Requisito 01"   
+	git stash save "Requisito 01"   (Obsoleto)
+	git stash push -m "comentario para recordar el objeto del stash"
 
 Para visualizar los stash.  
 El stash{0} siempre es el cambio mas actual, en la parte superior de la lista.  
@@ -344,6 +345,10 @@ El stash{0} siempre es el cambio mas actual, en la parte superior de la lista.
 Para recuperar el trabajo incompleto, si solo hay un stash.  
  
 	git stash pop
+	
+Para recuperar el trabajo incompleto de un stash concreto. También elimina dicho stash del stash list.
+
+	git stash pop X 	(donde X es el númer del stash list)
 
 Para recuperar el trabajo incompleto de la list.  
 
@@ -353,8 +358,11 @@ Para recuperar el trabajo incompleto de la list.
 Para eliminar un stash de la lista.  
 
 	git stash drop stash@{0}
+	git stash drop X (X es el numero de stash)
 
+Para obtener ayuda online.
 
+	git stash --help
 
 
 # VIM #
